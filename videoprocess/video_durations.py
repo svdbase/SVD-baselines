@@ -33,9 +33,6 @@ class VideoDuration(object):
         durations = mp.Manager()
         self.durations = durations.dict()
 
-        with open(os.path.join(opt['infopath'], 'durations.pkl'), 'rb') as fp:
-            self.existing = pickle.load(fp)
-
         failed_videos = mp.Manager()
         self.failed_videos = failed_videos.list()
 
@@ -48,8 +45,6 @@ class VideoDuration(object):
 
     def video_duration(self, params):
         index, video = params[0], params[1]
-        if video in self.existing:
-            return video, self.existing[video]
         videopath = os.path.join(opt['videopath'], video)
 
         try:
