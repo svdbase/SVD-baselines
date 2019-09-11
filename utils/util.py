@@ -21,9 +21,8 @@ def get_video_id(dtype=None):
 
     else:
         videos = set()
-        for dtype in ['query', 'labeled-data', 'unlabeled-data']:
-            filepath = os.path.join(opt['metadatapath'], dtype + '-id')
-            with open(filepath, 'r') as fp:
-                for tmps in fp:
-                    videos.add(tmps.strip())
+        filepath = os.path.join(opt['metadatapath'], 'all-video-id')
+        with open(filepath, 'r') as fp:
+            for tmps in fp:
+                videos.add(tmps.strip())
         return videos

@@ -25,6 +25,7 @@ parser.add_argument('--output-path', type=str, default='log')
 parser.add_argument('--configfile', type=str, default='')
 parser.add_argument('--dataname', type=str, default='svd')
 parser.add_argument('--approach', type=str, default='')
+parser.add_argument('--fps', type=int, default=1)
 
 args = parser.parse_args()
 
