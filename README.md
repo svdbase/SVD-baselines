@@ -23,11 +23,13 @@ path/to/data
 │    │ ...
 │
 └───frames/
-│    │ xxx.lmdb
+│    │ frames-0.h5
 │    │ ...
+│    │ frames-9.h5
+│    │ processed.pkl
 │
 └───ffeatures/
-│    │ xxx.lmdb
+│    │ xxx.h5
 │    │ ...
 │
 └───vfeatures/
