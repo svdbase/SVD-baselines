@@ -15,6 +15,26 @@ tensorflow
 ### 2. Running Demos
 #### 2.0. Preliminary
 ##### Directory to store some files
+```
+path/to/data
+│
+└───videos/
+│    │ xxx.mp4
+│    │ ...
+│
+└───frames/
+│    │ xxx.lmdb
+│    │ ...
+│
+└───ffeatures/
+│    │ xxx.lmdb
+│    │ ...
+│
+└───vfeatures/
+│    │ xxx.lmdb
+│    │ ...
+```
+
 #### 2.1. Preprocessing
 ##### Frame Extraction
 ##### Deep Features Extraction

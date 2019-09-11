@@ -48,6 +48,7 @@ args.framepath = os.path.join(args.datapath, 'frames')
 args.videopath = os.path.join(args.datapath, 'videos')
 args.infopath = os.path.join(args.datapath, 'infos')
 
+
 def load_config(filepath):
     config = {}
     if os.path.exists(filepath):
