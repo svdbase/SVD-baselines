@@ -51,9 +51,21 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+            <state relative-caret-position="794">
+              <caret line="48" column="149" selection-start-line="48" selection-start-column="149" selection-end-line="48" selection-end-column="149" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="frame_extraction.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/videoprocess/frame_extraction.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="754">
+              <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="54" />
+              <folding>
+                <element signature="e#253#262#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -656,16 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/videoprocess/frame_extraction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="790">
-          <caret line="94" column="37" selection-start-line="94" selection-start-column="37" selection-end-line="94" selection-end-column="37" />
-          <folding>
-            <element signature="e#253#262#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../ICCV_SVD/videoprocess/deepfeature_extraction.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -706,11 +708,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/videoprocess/videofeatures_extraction.py">
+    <entry file="file://$PROJECT_DIR$/videoprocess/frame_extraction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="754">
+          <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="54" />
+          <folding>
+            <element signature="e#253#262#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -724,10 +728,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/videoprocess/videofeatures_extraction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+        <state relative-caret-position="794">
+          <caret line="48" column="149" selection-start-line="48" selection-start-column="149" selection-end-line="48" selection-end-column="149" />
           <folding />
         </state>
       </provider>

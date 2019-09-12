@@ -36,10 +36,17 @@ path/to/data
 
 #### 2.1. Preprocessing
 ##### 2.1.1. Frame Extraction
+Run the following command:
+```bash
+python videoprocess/frame_extraction.py --dataname svd
+```
+The extracted frames will be saved in the folder: /path/to/data/frames. We utilize 10 files: frames-[0-9].h5 to save frames. The total storage cost for frames is about xxxG when fps=1.
+##### 2.1.2. Deep Features Extraction
+Run the following command:
 ```bash
 CUDA_VISIBLE_DEVICES=1 python videoprocess/deepfeatures_extraction.py.py --dataname svd
 ```
-##### 2.1.2. Deep Features Extraction
+The extracted deep features for each videos will be saved in the file: /path/to/data/features/frames-features.h5. This file is about xxxG when fps=1.
 ##### 2.1.3. Video Features Aggregations
 #### 2.2. Real-Value based Method
 ##### 2.2.1. CNNL
