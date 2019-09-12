@@ -35,15 +35,17 @@ path/to/data
 ```
 
 #### 2.1. Preprocessing
-##### Frame Extraction
-##### Deep Features Extraction
-##### Video Features Aggregations
+##### 2.1.1. Frame Extraction
+```bash
+CUDA_VISIBLE_DEVICES=1 python videoprocess/deepfeatures_extraction.py.py --dataname svd
+```
+##### 2.1.2. Deep Features Extraction
+##### 2.1.3. Video Features Aggregations
 #### 2.2. Real-Value based Method
-##### DML
-##### CNNL
-##### CNNV
+##### 2.2.1. CNNL
+##### 2.2.2. CNNV
 #### 2.3. Hashing based Method
-##### LSH
-##### ITQ
-##### IsoH
+##### 2.3.1. LSH
+##### 2.3.2. ITQ
+##### 2.3.3. IsoH
 
