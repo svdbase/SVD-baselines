@@ -7,7 +7,7 @@
 # @Date: 19-8-25
 # +++++++++++++++++++++++++++++++++++++++++++++++++++
 import os
-import sys
+import torch
 import argparse
 import yaml
 
@@ -39,6 +39,10 @@ if args.debug:
 if args.en_local_log:
     os.mkdir(args.logdir)
 
+args.device = 'cpu'
+if torch.cuda.is_available():
+    args.device = 'cuda'
+
 args.path = '/home/jiangqy/'
 args.projpath = os.path.join(args.path, 'program', 'SVD-baselines')
 args.datapath = os.path.join('/data1/jiangqy/dataset/', args.dataname)
@@ -48,6 +52,7 @@ args.metadatapath = os.path.join(args.datapath, 'metadata')
 args.framepath = os.path.join(args.datapath, 'frames')
 args.videopath = os.path.join(args.datapath, 'videos')
 args.infopath = os.path.join(args.datapath, 'infos')
+args.featurepath = os.path.join(args.datapath, 'features')
 
 
 def load_config(filepath):
@@ -73,5 +78,6 @@ def create_path_if_missing(filepath):
 
 
 create_path_if_missing(opt['framepath'])
+create_path_if_missing(opt['featurepath'])
 
 

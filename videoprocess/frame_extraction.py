@@ -65,7 +65,7 @@ class FrameExtractor:
             try:
                 cap = cv2.VideoCapture(videopath)
                 cnt = cap.get(cv2.CAP_PROP_FPS)
-                count = 0
+                count, num_frame = 0, 0
                 jpegs = []
                 while cap.isOpened():
                     ret, frame = cap.read()
@@ -73,11 +73,13 @@ class FrameExtractor:
                         if int(count * self.fps / (round(cnt))) == 0:
                             jpeg = cv2.imencode('.jpg', frame)[1]
                             jpegs.append(jpeg)
+                            num_frame += 1
                     else:
                         break
                     count += 1
-                if count > 0:
+                if num_frame > 0:
                     fg = fp.create_group(name=video)
+                    fg.create_dataset(name='num_frames', data=num_frame)
                     for index, jpeg in enumerate(jpegs):
                         fg.create_dataset(name=str(index), data=jpeg)
                     self.processing[video] = filepath
@@ -108,7 +110,9 @@ class FrameExtractor:
         for idx, proc in enumerate(self.procs):
             proc.join()
             logger.info('process: {} done'.format(idx))
+
         processing = dict(self.processing)
+        logger.info('#{} videos are extracted successfully.'.format(len(processing)))
         filename = 'processed.pkl'
         filepath = os.path.join(opt['framepath'], filename)
         with open(filepath, 'wb') as fp:

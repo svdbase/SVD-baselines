@@ -28,12 +28,9 @@ path/to/data
 │    │ frames-9.h5
 │    │ processed.pkl
 │
-└───ffeatures/
-│    │ xxx.h5
-│    │ ...
-│
-└───vfeatures/
-│    │ xxx.lmdb
+└───features/
+│    │ frames-features.h5
+│    │ videos-features.h5
 │    │ ...
 ```
 
