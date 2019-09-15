@@ -58,7 +58,7 @@ def create_imagepaths():
 
 
 def main():
-    batch_size = 60
+    batch_size = 120
     imagespaths, cutoffs = create_imagepaths()
     logger.info('#{} frames will be processed.'.format(len(imagespaths)))
     logger.info('#{} videos will be processed.'.format(len(cutoffs)))
@@ -106,6 +106,6 @@ if __name__ == "__main__":
 
 
 '''bash
-CUDA_VISIBLE_DEVICES=1 python videoprocess/deepfeatures_extraction.py.py --dataname svd-example
+CUDA_VISIBLE_DEVICES=12 python videoprocess/deepfeatures_extraction.py --dataname svd-example
 '''
 

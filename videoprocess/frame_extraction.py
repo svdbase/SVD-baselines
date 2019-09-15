@@ -6,9 +6,10 @@
 # @Mail: qyjiang24@gmail.com
 # @Date: 19-8-25
 # +++++++++++++++++++++++++++++++++++++++++++++++++++
-import os
-import cv2
 import h5py
+import cv2
+import imageio
+import skimage
 import pickle
 
 import numpy as np
@@ -52,42 +53,86 @@ class FrameExtractor:
                 processed = pickle.load(fp)
         return processed
 
+    @staticmethod
+    def cv2_extractor(videopath, fps=1):
+        try:
+            cap = cv2.VideoCapture(videopath)
+            cnt = cap.get(cv2.CAP_PROP_FPS)
+            count, num_frame = 0, 0
+            jpegs = []
+            while cap.isOpened():
+                ret, frame = cap.read()
+                if isinstance(frame, np.ndarray):
+                    if int(count * fps / (round(cnt))) == 0:
+                        jpeg = cv2.imencode('.jpg', frame)[1]
+                        jpegs.append(jpeg)
+                        num_frame += 1
+                else:
+                    break
+                count += 1
+            if num_frame > 0:
+                return num_frame, jpegs
+        except Exception as e:
+            print('Exception: {} (cv2)'.format(e))
+            return None
+
+    @staticmethod
+    def ffmpeg_extractor(videopath, fps):
+        try:
+            reader = imageio.get_reader(videopath, 'ffmpeg')
+            duration = reader.get_meta_data()['duration']
+            num_frame = 0
+            jpegs = []
+            for count, im in enumerate(reader):
+                image = skimage.img_as_uint(im).astype(np.uint8)
+                if int(count * fps / (round(duration))) == 0:
+                    jpeg = cv2.imencode('.jpg', image)[1]
+                    jpegs.append(jpeg)
+                    num_frame += 1
+            if num_frame > 0:
+                return num_frame, jpegs
+        except Exception as e:
+            print('Exception: {} (ffmpeg)'.format(e))
+            return None
+
     def frame_extractor(self, params):
         idx, video_piece = params[0], params[1]
+        logger.info('process: {}, processing: {}'.format(idx, len(video_piece)))
         filename = '-'.join(['frames', str(idx) + '.h5'])
         filepath = os.path.join(opt['framepath'], filename)
-        fp = h5py.File(filepath, mode='w')
-        for video in video_piece:
+        fp = h5py.File(filepath, mode=_write_mode)
+        num_videos = len(video_piece)
+        for ind, video in enumerate(video_piece):
             if video in self.processed:
                 self.processing[video] = filepath
                 continue
             videopath = os.path.join(opt['videopath'], video)
-            try:
-                cap = cv2.VideoCapture(videopath)
-                cnt = cap.get(cv2.CAP_PROP_FPS)
-                count, num_frame = 0, 0
-                jpegs = []
-                while cap.isOpened():
-                    ret, frame = cap.read()
-                    if isinstance(frame, np.ndarray):
-                        if int(count * self.fps / (round(cnt))) == 0:
-                            jpeg = cv2.imencode('.jpg', frame)[1]
-                            jpegs.append(jpeg)
-                            num_frame += 1
-                    else:
-                        break
-                    count += 1
-                if num_frame > 0:
+            results = self.cv2_extractor(videopath, self.fps)
+            if results is not None:
+                num_frame, jpegs = results
+                fg = fp.create_group(name=video)
+                fg.create_dataset(name='num_frames', data=num_frame)
+                for index, jpeg in enumerate(jpegs):
+                    fg.create_dataset(name=str(index), data=jpeg)
+                self.processing[video] = filepath
+                if self.verbose:
+                    logger.info('filepart: {:2d}, file: {:5d}/{:5d}. frame extraction for video {} is done by cv2'.format(
+                        idx, ind, num_videos, video))
+            else:
+                results = self.ffmpeg_extractor(videopath, self.fps)
+                if results is not None:
+                    num_frame, jpegs = results
                     fg = fp.create_group(name=video)
                     fg.create_dataset(name='num_frames', data=num_frame)
                     for index, jpeg in enumerate(jpegs):
                         fg.create_dataset(name=str(index), data=jpeg)
                     self.processing[video] = filepath
                     if self.verbose:
-                        logger.info('filepart: {:2d}, frame extraction for video {} is done'.format(
-                            idx, video))
-            except Exception as e:
-                logger.info('Exception: {}'.format(e))
+                        logger.info('filepart: {:2d}, file: {:5d}/{:5d}. '
+                                    'frame extraction for video {} is done by ffmpeg'.format(
+                            idx, ind, num_videos, video))
+                else:
+                    logger.info('processing video: {} failed'.format(video))
         fp.close()
 
     def worker(self, idx):
@@ -119,6 +164,7 @@ class FrameExtractor:
             pickle.dump(processing, fp)
 
 _NUM_FRAME_PIECE = 10
+_write_mode = 'w' ## or 'a'
 
 
 def split_videos(videos):

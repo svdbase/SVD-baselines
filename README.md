@@ -42,7 +42,7 @@ Run the following command:
 ```bash
 python videoprocess/frame_extraction.py --dataname svd
 ```
-The extracted frames will be saved in the folder: /path/to/data/frames. We utilize 10 files: frames-[0-9].h5 to save frames. The total storage cost for frames is about xxxG when fps=1.
+The extracted frames will be saved in the folder: /path/to/data/frames. We utilize 10 files: frames-[0-9].h5 to save frames. The total storage cost for frames is about 500G (516G on my device) when fps=1.
 ##### 2.1.2. Deep Features Extraction
 Required files: frames-[0-9].h5 in the folder: /path/to/data/frames.
 
