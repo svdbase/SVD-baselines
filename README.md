@@ -36,7 +36,7 @@ path/to/data
 
 #### 2.1. Preprocessing
 ##### 2.1.1. Frame Extraction
-Required files: videos in the folder: /path/to/data/videos/.
+Required files: videos in the folder: /path/to/data/videos/*.mp4.
 
 Run the following command:
 ```bash
@@ -48,7 +48,7 @@ Required files: frames-[0-9].h5 in the folder: /path/to/data/frames.
 
 Run the following command:
 ```bash
-CUDA_VISIBLE_DEVICES=1 python videoprocess/deepfeatures_extraction.py.py --dataname svd
+CUDA_VISIBLE_DEVICES=1 python videoprocess/deepfeatures_extraction.py --dataname svd
 ```
 The extracted deep features for each video will be saved in the file: /path/to/data/features/frames-features.h5. This file is about xxxG when fps=1.
 ##### 2.1.3. Video Features Aggregations
