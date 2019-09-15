@@ -7,6 +7,7 @@
 # @Date: 19-8-26
 # +++++++++++++++++++++++++++++++++++++++++++++++++++
 import os
+from collections import OrderedDict
 
 from utils.args import opt
 
@@ -26,3 +27,21 @@ def get_video_id(dtype=None):
             for tmps in fp:
                 videos.add(tmps.strip())
         return videos
+
+
+def load_groundtruth(filename=None):
+    if filename is None:
+        filename = 'test_groundtruth'
+    filepath = os.path.join(opt['metadatapath'], filename)
+    gnds = OrderedDict()
+    with open(filepath, 'r') as fp:
+        for idx, lines in enumerate(fp):
+            tmps = lines.strip().split(' ')
+            qid = tmps[0]
+            cid = tmps[1]
+            gt = int(tmps[-1])
+            if qid not in gnds:
+                gnds[qid] = {cid: gt}
+            else:
+                gnds[qid][cid] = gt
+    return gnds

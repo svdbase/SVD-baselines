@@ -58,7 +58,12 @@ python videoprocess/videofeatures_extraction.py --dataname svd
 ```
 The aggregated features for each will be saved in the file: /path/to/data/features/videos-features.h5. This file is about XXXG when fps=1.
 #### 2.1.4. Evaluation for Brute Force Search.
+Required files: features in the folder: /path/to/data/features/videos-features.h5.
 
+Run the following command:
+```bash
+python demos/bfs_demo.py --dataname svd
+```
 #### 2.2. Real-Value based Method
 ##### 2.2.1. CNNL
 ##### 2.2.2. CNNV
