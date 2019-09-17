@@ -51,6 +51,8 @@ class VideoFeatureExtractor(object):
         vfeature = vfeature.mean(axis=0, keepdims=True)
         vfeature = self.__normalize__(vfeature)
         self.vfeatures[video] = vfeature
+        if index % 10000 == 0:
+            logger.info('index: {:6d}, video: {}'.format(index, video))
 
     def worker(self, idx):
         while True:
@@ -61,7 +63,7 @@ class VideoFeatureExtractor(object):
             try:
                 self.normalization(params)
             except Exception as e:
-                logger.info('Exception: {}.'.format(e))
+                logger.info('Exception: {}. video: {}'.format(e, params[1]))
 
     def start(self, videolists):
         for idx, video in enumerate(videolists):
@@ -87,6 +89,7 @@ class VideoFeatureExtractor(object):
 def main():
     vfe = VideoFeatureExtractor()
     videos = get_video_id()
+    logger.info('#video: {}'.format(len(videos)))
     vfe.start(videos)
     vfe.stop()
     vfe.save_features()

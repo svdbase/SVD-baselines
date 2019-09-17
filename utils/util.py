@@ -15,11 +15,11 @@ from utils.args import opt
 def get_video_id(dtype=None):
     if dtype is not None:
         videos = set()
-        filepath = os.path.join(opt['metadatapath'] + '-id')
+        filepath = os.path.join(opt['metadatapath'], dtype + '-id')
         with open(filepath, 'r') as fp:
             for tmps in fp:
                 videos.add(tmps.strip())
-
+        return videos
     else:
         videos = set()
         filepath = os.path.join(opt['metadatapath'], 'all-video-id')
@@ -31,7 +31,7 @@ def get_video_id(dtype=None):
 
 def load_groundtruth(filename=None):
     if filename is None:
-        filename = 'test_groundtruth'
+        filename = 'groundtruth'
     filepath = os.path.join(opt['metadatapath'], filename)
     gnds = OrderedDict()
     with open(filepath, 'r') as fp:

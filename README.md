@@ -50,13 +50,13 @@ Run the following command:
 ```bash
 CUDA_VISIBLE_DEVICES=1 python videoprocess/deepfeatures_extraction.py --dataname svd
 ```
-The extracted deep features for each video will be saved in the file: /path/to/data/features/frames-features.h5. This file is about xxxG when fps=1.
+The extracted deep features for each video will be saved in the file: /path/to/data/features/frames-features.h5. This file is about 246G when fps=1.
 ##### 2.1.3. Video Features Aggregations
 Required files: frames-features.h5 in the folder: /path/to/data/features.
 ```bash
 python videoprocess/videofeatures_extraction.py --dataname svd
 ```
-The aggregated features for each will be saved in the file: /path/to/data/features/videos-features.h5. This file is about XXXG when fps=1.
+The aggregated features for each will be saved in the file: /path/to/data/features/videos-features.h5. This file is about 8.8G when fps=1.
 #### 2.1.4. Evaluation for Brute Force Search.
 Required files: features in the folder: /path/to/data/features/videos-features.h5.
 
