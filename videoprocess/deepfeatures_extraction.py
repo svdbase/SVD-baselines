@@ -84,7 +84,20 @@ def main():
                 while True:
                     if count < len(cutoffs) and len(buffer) >= cutoffs[count][1]:
                         offset = cutoffs[count][1]
+                        curr_video, next_video = '', ''
+                        try:
+                            curr_ind = index[0] - len(buffer) + len(features) + offset - 1
+                            next_ind = curr_ind + 1
+                            curr_video = imagespaths[curr_ind][1]
+                            next_video = imagespaths[next_ind][1]
+                            if curr_video == next_video:
+                                logger.info('Split Error: {}/{}'.format(curr_video, next_video))
+                                return
+
+                        except:
+                            pass
                         save_features = buffer[:offset]
+
                         if not len(save_features) == cutoffs[count][1]:
                             logger.info('Length Error: {}/{}'.format(len(save_features), cutoffs[count][1]))
                             return
@@ -94,7 +107,8 @@ def main():
                         buffer = buffer[offset:]
                         count += 1
                         if opt['verbose']:
-                            logger.info('video: {}, {:6d}/{:6d} is done.'.format(video, count, len(cutoffs)))
+                            logger.info('video: {}, {:6d}/{:6d} is done. current video: {}, next video: {}'.format(
+                                video, count, len(cutoffs), curr_video, next_video))
                     else:
                         break
     fp.close()

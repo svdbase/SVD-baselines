@@ -26,6 +26,7 @@ parser.add_argument('--configfile', type=str, default='')
 parser.add_argument('--dataname', type=str, default='svd')
 parser.add_argument('--approach', type=str, default='')
 parser.add_argument('--fps', type=int, default=1)
+parser.add_argument('--output-period', type=int, default=10000)
 
 args = parser.parse_args()
 

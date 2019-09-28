@@ -21,6 +21,7 @@ from utils.calc_euclidean_search import calc_euclidean_search
 
 def load_features():
     filepath = os.path.join(opt['featurepath'], 'videos-features.h5')
+    # filepath = '/data3/jiangqy/dataset/svd/vfeatures_4096/video-features.h5'
     features = {}
     fp = h5py.File(filepath, mode='r')
     for k in fp:

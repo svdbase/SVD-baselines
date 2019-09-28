@@ -38,11 +38,7 @@ class VGG(nn.Module):
         )
         self.mac_pool = nn.AdaptiveMaxPool2d(1)
 
-    def forward(self, x, normalize=True):
-        if normalize:
-            for image in x:
-                for img_, m, s in zip(image, self.__mean, self.__std):
-                    img_.div_(255.).sub_(m).div_(s)
+    def forward(self, x):
         x = self.features(x)
         x = x.view(x.size(0), -1)
         x = self.classifier(x)

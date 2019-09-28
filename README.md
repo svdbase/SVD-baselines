@@ -23,10 +23,11 @@ path/to/data
 │    │ ...
 │
 └───frames/
-│    │ frames-0.h5
+│    │ xxx.mp4/0000.jpg
+│    │ xxx.mp4/0001.jpg
 │    │ ...
-│    │ frames-9.h5
-│    │ processed.pkl
+│    │ xxx.mp4/0002.jpg
+│    │ ...
 │
 └───features/
 │    │ frames-features.h5
@@ -71,4 +72,13 @@ python demos/bfs_demo.py --dataname svd
 ##### 2.3.1. LSH
 ##### 2.3.2. ITQ
 ##### 2.3.3. IsoH
+### 3. TODO list
++ [x] frame extraction
++ [] deep feature extraction
++ [] brute-force demo
++ [] CNNL/CNNV demo
++ [] LSH demo
++ [] ITQ demo
++ [] IsoH demo
++ [] Reranking demo
 

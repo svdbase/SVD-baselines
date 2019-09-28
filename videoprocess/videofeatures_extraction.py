@@ -47,7 +47,10 @@ class VideoFeatureExtractor(object):
         fp = h5py.File(featurepath, mode='r')
         index, video = params[0], params[1]
         framefeatures = np.array(fp[video][()]).squeeze()
+        if framefeatures.ndim == 1:
+            framefeatures = np.array([framefeatures, framefeatures])
         vfeature = self.__normalize__(framefeatures)
+        vfeature = self.__normalize__(vfeature)
         vfeature = vfeature.mean(axis=0, keepdims=True)
         vfeature = self.__normalize__(vfeature)
         self.vfeatures[video] = vfeature
