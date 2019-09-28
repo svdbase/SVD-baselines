@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb86e968-5a62-4393-81cb-4390675b2bb2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/videoprocess/frame_check.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demos/bfs_demo.py" afterPath="$PROJECT_DIR$/demos/bfs_demo.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/vgg.py" afterPath="$PROJECT_DIR$/modules/vgg.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/args.py" afterPath="$PROJECT_DIR$/utils/args.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/videoprocess/deepfeatures_extraction.py" afterPath="$PROJECT_DIR$/videoprocess/deepfeatures_extraction.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/videoprocess/frame_extraction.py" afterPath="$PROJECT_DIR$/videoprocess/frame_extraction.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/videoprocess/videofeatures_extraction.py" afterPath="$PROJECT_DIR$/videoprocess/videofeatures_extraction.py" />
     </list>
     <ignored path="SVD-baselines.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,7 +44,7 @@
             <entry file="file://$PROJECT_DIR$/README.md">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="880">
-                  <caret line="82" column="19" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
+                  <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
                   <folding />
                 </state>
               </provider>
@@ -820,7 +812,7 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="880">
-          <caret line="82" column="19" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
+          <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
           <folding />
         </state>
       </provider>

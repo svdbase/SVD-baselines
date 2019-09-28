@@ -74,11 +74,11 @@ python demos/bfs_demo.py --dataname svd
 ##### 2.3.3. IsoH
 ### 3. TODO list
 + [x] frame extraction
-+ [] deep feature extraction
-+ [] brute-force demo
-+ [] CNNL/CNNV demo
-+ [] LSH demo
-+ [] ITQ demo
-+ [] IsoH demo
-+ [] Reranking demo
++ [ ] deep feature extraction
++ [ ] brute-force demo
++ [ ] CNNL/CNNV demo
++ [ ] LSH demo
++ [ ] ITQ demo
++ [ ] IsoH demo
++ [ ] Reranking demo
 
