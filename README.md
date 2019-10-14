@@ -71,7 +71,7 @@ Run the following command:
 python demos/bfs_demo.py --dataname svd
 ```
 
-The map is:
+The map is: 0.7537
 #### 2.2. Real-Value based Method
 ##### 2.2.1. CNNL
 ##### 2.2.2. CNNV
