@@ -1,0 +1,26 @@
+[2019-10-14 10:55:57,766][INFO]: param: seed: 0
+[2019-10-14 10:55:57,766][INFO]: param: num_procs: 10
+[2019-10-14 10:55:57,766][INFO]: param: en_local_log: True
+[2019-10-14 10:55:57,766][INFO]: param: verbose: True
+[2019-10-14 10:55:57,767][INFO]: param: debug: False
+[2019-10-14 10:55:57,767][INFO]: param: output_path: log
+[2019-10-14 10:55:57,767][INFO]: param: configfile: 
+[2019-10-14 10:55:57,767][INFO]: param: dataname: svd
+[2019-10-14 10:55:57,767][INFO]: param: approach: 
+[2019-10-14 10:55:57,767][INFO]: param: fps: 1
+[2019-10-14 10:55:57,767][INFO]: param: output_period: 10000
+[2019-10-14 10:55:57,767][INFO]: param: timestamp: 10-14-10-55-55
+[2019-10-14 10:55:57,768][INFO]: param: logdir: /home/jiangqy/program/SVD-baselines/log/log-10-14-10-55-55
+[2019-10-14 10:55:57,768][INFO]: param: device: cuda
+[2019-10-14 10:55:57,768][INFO]: param: path: /home/jiangqy/
+[2019-10-14 10:55:57,768][INFO]: param: projpath: /home/jiangqy/program/SVD-baselines
+[2019-10-14 10:55:57,768][INFO]: param: datapath: /data1/jiangqy/dataset/svd
+[2019-10-14 10:55:57,768][INFO]: param: configpath: /home/jiangqy/program/SVD-baselines/config
+[2019-10-14 10:55:57,768][INFO]: param: metadatapath: /data1/jiangqy/dataset/svd/metadata
+[2019-10-14 10:55:57,768][INFO]: param: framepath: /data1/jiangqy/dataset/svd/frames
+[2019-10-14 10:55:57,769][INFO]: param: videopath: /data1/jiangqy/dataset/svd/videos
+[2019-10-14 10:55:57,769][INFO]: param: infopath: /data1/jiangqy/dataset/svd/infos
+[2019-10-14 10:55:57,769][INFO]: param: featurepath: /data1/jiangqy/dataset/svd/features
+[2019-10-14 10:55:57,769][INFO]: ---------------------------------load param done---------------------------------
+[2019-10-14 10:58:53,998][INFO]: loading features done. #videos: 562013
+[2019-10-14 10:58:54,231][INFO]: load gnds and unlabeled keys done. #query: 206

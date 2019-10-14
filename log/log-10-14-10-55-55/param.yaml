@@ -1,0 +1,7 @@
+{approach: '', configfile: '', configpath: /home/jiangqy/program/SVD-baselines/config,
+  dataname: svd, datapath: /data1/jiangqy/dataset/svd, debug: false, device: cuda,
+  en_local_log: true, featurepath: /data1/jiangqy/dataset/svd/features, fps: 1, framepath: /data1/jiangqy/dataset/svd/frames,
+  infopath: /data1/jiangqy/dataset/svd/infos, logdir: /home/jiangqy/program/SVD-baselines/log/log-10-14-10-55-55,
+  metadatapath: /data1/jiangqy/dataset/svd/metadata, num_procs: 10, output_path: log,
+  output_period: 10000, path: /home/jiangqy/, projpath: /home/jiangqy/program/SVD-baselines,
+  seed: 0, timestamp: 10-14-10-55-55, verbose: true, videopath: /data1/jiangqy/dataset/svd/videos}
