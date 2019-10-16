@@ -74,17 +74,26 @@ The map is: 0.7537
 #### 2.2. Hashing based Method
 Required file: features in the folder: /path/to/data/features/videos-features.h5.
 ##### 2.2.1. LSH
+Run the following command:
 ```bash
 python demos/lsh_demo.py --dataname svd --approach lsh --bit 16
 ```
+
+The map is: 0.0370
 ##### 2.2.2. ITQ
+Run the following command:
 ```bash
 python demos/itq_demo.py --dataname svd --approach itq --bit 16
 ```
+
+The map is: 0.0560
 ##### 2.2.3. IsoH
+Run the following command:
 ```bash
 python demos/isoh_demo.py --dataname svd --approach isoh --bit 16
 ```
+
+The map is: 0.0562
 
 #### 2.3. Real-Value based Method
 ##### 2.3.1. CNNL
