@@ -127,7 +127,7 @@ python videoprocess/cnnv_feature_aggregation.py --dataname svd --approach cnnvfa
 
 The learned features are stored at: /path/to/data/features/cnnv-agg-features.h5
 
-+ Step 4: evalution cnnv
++ Step 4: evaluating cnnv
 
 Required files: cnnv-aggregated features in the folder: /path/to/data/features/cnnv-agg-features.h5
 
@@ -135,7 +135,7 @@ Required files: cnnv-aggregated features in the folder: /path/to/data/features/c
 python demos/cnnv_demo.py --dataname svd --approach cnnv
 ```
 
-The map is:
+The map is: 0.1895
 ### 3. TODO list
 + [x] frame extraction
 + [x] deep feature extraction

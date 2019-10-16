@@ -25,7 +25,7 @@ def main():
     gnds = load_groundtruth(gt_file)
 
     featurepath = os.path.join(opt['featurepath'], 'cnnv-agg-features.h5')
-    all_features = load_features(featurepath)
+    all_features, _ = load_features(featurepath)
     logger.info('load features done')
 
     map = calc_euclidean_search(all_features, unlabeled_keys, gnds)
