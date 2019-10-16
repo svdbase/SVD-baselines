@@ -84,9 +84,9 @@ The map is: 0.7537
 + [x] frame extraction
 + [x] deep feature extraction
 + [x] brute-force demo
-+ [ ] LSH demo
-+ [ ] ITQ demo
-+ [ ] IsoH demo
++ [x] LSH demo
++ [x] ITQ demo
++ [x] IsoH demo
 + [ ] CNNV/CNNL demo
 + [ ] Reranking demo
 
