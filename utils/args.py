@@ -29,6 +29,10 @@ parser.add_argument('--fps', type=int, default=1)
 parser.add_argument('--bit', type=int, default=16)
 parser.add_argument('--output-period', type=int, default=10000)
 
+'''cnnv params'''
+parser.add_argument('--num-key-frames', type=int, default=50000)
+parser.add_argument('--num-centers', type=int, default=300)
+
 args = parser.parse_args()
 
 args.timestamp = datetime.now().strftime('%m-%d-%H-%M-%S')

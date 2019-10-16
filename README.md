@@ -96,9 +96,22 @@ python demos/isoh_demo.py --dataname svd --approach isoh --bit 16
 The map is: 0.0562
 
 #### 2.3. Real-Value based Method
-##### 2.3.1. CNNL
+##### 2.3.1. CNNV
++ Step 1: sampling frames for clustering:
+Required files: frames-features.h5 in the folder: /path/to/data/features.
+```bash
+python videoprocess/cnnlv_keyframe_sampling.py --dataname svd --approach cfs
+```
 
-##### 2.3.2. CNNV
+Sampled frames are stored at: /path/to/data/features/cnnlv-sampling-features.h5
+
++ Step 2: clustering
+Required files: cnnlv-sampling-features.h5 in the folder: /path/to/data/features.
+```bash
+python videoprocess/cnnv_clustering.py --dataname svd --approach cnnvcluster
+```
+
+The learned centers are stored at: /path/to/data/features/cnnv-centers.h5
 ### 3. TODO list
 + [x] frame extraction
 + [x] deep feature extraction
@@ -106,6 +119,5 @@ The map is: 0.0562
 + [x] LSH demo
 + [x] ITQ demo
 + [x] IsoH demo
-+ [ ] CNNV/CNNL demo
-+ [ ] Reranking demo
++ [x] CNNV demo
 

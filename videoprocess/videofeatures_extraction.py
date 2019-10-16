@@ -56,6 +56,7 @@ class VideoFeatureExtractor(object):
         self.vfeatures[video] = vfeature
         if index % 10000 == 0:
             logger.info('index: {:6d}, video: {}'.format(index, video))
+        fp.close()
 
     def worker(self, idx):
         while True:
