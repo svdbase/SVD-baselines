@@ -7,9 +7,43 @@
 # @Date: 19-8-26
 # +++++++++++++++++++++++++++++++++++++++++++++++++++
 import os
+import h5py
+
+import numpy as np
+
 from collections import OrderedDict
 
 from utils.args import opt
+
+
+def load_features(featurepath, dtype='dict'):
+    if dtype == 'dict':
+        features = {}
+        fo = h5py.File(featurepath, mode='r')
+        mean_feature = 0.
+        cnt = 0.
+        for k in fo:
+            feature = fo[k][()].squeeze().reshape(1, -1)
+            mean_feature += feature
+            cnt += 1
+            features[k] = feature
+        fo.close()
+        mean_feature /= cnt
+        return features, mean_feature
+    if dtype == 'array':
+        features = []
+        fo = h5py.File(featurepath, mode='r')
+        mean_feature = 0.
+        cnt = 0.
+        for k in fo:
+            feature = fo[k][()].squeeze().reshape(1, -1)
+            mean_feature += feature
+            cnt += 1
+            features.append(feature)
+        fo.close()
+        mean_feature /= cnt
+        features = np.array(features).squeeze() - mean_feature
+        return features
 
 
 def get_video_id(dtype=None):

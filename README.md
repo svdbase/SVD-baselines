@@ -9,7 +9,6 @@ This repo is the source code of the implementations of the baselines in the pape
 ```bash
 python 3
 pytorch
-tensorflow
 ```
 
 ### 2. Running Demos
@@ -72,20 +71,22 @@ python demos/bfs_demo.py --dataname svd
 ```
 
 The map is: 0.7537
-#### 2.2. Real-Value based Method
-##### 2.2.1. CNNL
-##### 2.2.2. CNNV
-#### 2.3. Hashing based Method
-##### 2.3.1. LSH
-##### 2.3.2. ITQ
-##### 2.3.3. IsoH
+#### 2.2. Hashing based Method
+##### 2.2.1. LSH
+##### 2.2.2. ITQ
+##### 2.2.3. IsoH
+
+#### 2.3. Real-Value based Method
+##### 2.3.1. CNNL
+
+##### 2.3.2. CNNV
 ### 3. TODO list
 + [x] frame extraction
 + [x] deep feature extraction
 + [x] brute-force demo
-+ [ ] CNNL/CNNV demo
 + [ ] LSH demo
 + [ ] ITQ demo
 + [ ] IsoH demo
++ [ ] CNNV/CNNL demo
 + [ ] Reranking demo
 

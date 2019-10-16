@@ -30,16 +30,16 @@ def load_features():
 
 
 def main():
-    ### load features
+    # load features
     features = load_features()
     logger.info('loading features done. #videos: {}'.format(len(features)))
 
-    ### load groundtruth and unlabeled-keys
+    # load groundtruth and unlabeled-keys
     gnds = load_groundtruth('test_groundtruth')
     unlabeled_keys = get_video_id('unlabeled-data')
     logger.info('load gnds and unlabeled keys done. #query: {}'.format(len(gnds)))
 
-    ### calculate map
+    # calculate map
     map = calc_euclidean_search(features, unlabeled_keys, gnds)
     logger.info('map: {:.4f}'.format(map))
 
