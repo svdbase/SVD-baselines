@@ -86,19 +86,21 @@ Run the following command:
 python demos/itq_demo.py --dataname svd --approach itq --bit 16
 ```
 
-The map is: 0.0560
+The map@16bits is: 0.0560
 ##### 2.2.3. IsoH
 Run the following command:
 ```bash
 python demos/isoh_demo.py --dataname svd --approach isoh --bit 16
 ```
 
-The map is: 0.0562
+The map@16bits is: 0.0562
 
 #### 2.3. Real-Value based Method
 ##### 2.3.1. CNNV
 + Step 1: sampling frames for clustering:
+
 Required files: frames-features.h5 in the folder: /path/to/data/features.
+
 ```bash
 python videoprocess/cnnlv_keyframe_sampling.py --dataname svd --approach cfs
 ```
@@ -106,12 +108,34 @@ python videoprocess/cnnlv_keyframe_sampling.py --dataname svd --approach cfs
 Sampled frames are stored at: /path/to/data/features/cnnlv-sampling-features.h5
 
 + Step 2: clustering
+
 Required files: cnnlv-sampling-features.h5 in the folder: /path/to/data/features.
+
 ```bash
 python videoprocess/cnnv_clustering.py --dataname svd --approach cnnvcluster
 ```
 
 The learned centers are stored at: /path/to/data/features/cnnv-centers.h5
+
++ Step 3: generating cnnv features
+
+Required files: cnnv-centers in the folder: /path/to/data/features/cnnv-centers.h5
+
+```bash
+python videoprocess/cnnv_feature_aggregation.py --dataname svd --approach cnnvfa
+```
+
+The learned features are stored at: /path/to/data/features/cnnv-agg-features.h5
+
++ Step 4: evalution cnnv
+
+Required files: cnnv-aggregated features in the folder: /path/to/data/features/cnnv-agg-features.h5
+
+```bash
+python demos/cnnv_demo.py --dataname svd --approach cnnv
+```
+
+The map is:
 ### 3. TODO list
 + [x] frame extraction
 + [x] deep feature extraction
@@ -120,4 +144,5 @@ The learned centers are stored at: /path/to/data/features/cnnv-centers.h5
 + [x] ITQ demo
 + [x] IsoH demo
 + [x] CNNV demo
++ [ ] Reranking demo
 
