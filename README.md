@@ -72,9 +72,19 @@ python demos/bfs_demo.py --dataname svd
 
 The map is: 0.7537
 #### 2.2. Hashing based Method
+Required file: features in the folder: /path/to/data/features/videos-features.h5.
 ##### 2.2.1. LSH
+```bash
+python demos/lsh_demo.py --dataname svd --approach lsh --bit 16
+```
 ##### 2.2.2. ITQ
+```bash
+python demos/itq_demo.py --dataname svd --approach itq --bit 16
+```
 ##### 2.2.3. IsoH
+```bash
+python demos/isoh_demo.py --dataname svd --approach isoh --bit 16
+```
 
 #### 2.3. Real-Value based Method
 ##### 2.3.1. CNNL
