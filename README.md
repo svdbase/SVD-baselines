@@ -144,5 +144,4 @@ The map is: 0.1895
 + [x] ITQ demo
 + [x] IsoH demo
 + [x] CNNV demo
-+ [ ] Reranking demo
 
